@@ -8,15 +8,16 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="br.com.leumas.navigationcomponentapp.ui.start.StartFragment"
-        android:label="fragment_start"
+        android:label="@string/start_action_bar_title"
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_startFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/profileFragment"
         android:name="br.com.leumas.navigationcomponentapp.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="@string/profile_action_bar_title"
         tools:layout="@layout/fragment_profile" />
 </navigation>
