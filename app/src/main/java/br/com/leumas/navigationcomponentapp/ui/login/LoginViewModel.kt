@@ -13,14 +13,14 @@ class LoginViewModel : ViewModel() {
     val authenticationStateEvent = MutableLiveData<AuthenticationState>()
 
     fun authentication(userName: String, password: String) {
-        if (isValidateForm(userName, password)) {
+        if (isValidForm(userName, password)) {
             //Usuario está autenticado
         } else {
 
         }
     }
 
-    private fun isValidateForm(userName: String, password: String): Boolean {
+    private fun isValidForm(userName: String, password: String): Boolean {
         val invalidFields = arrayListOf<Pair<String, Int>>()
 
         if (userName.isEmpty()) {
@@ -35,9 +35,7 @@ class LoginViewModel : ViewModel() {
              authenticationStateEvent.value = AuthenticationState.InvalidAuthentication(invalidFields)
              return false
          }
-
         return true
-
     }
 
     companion object {
