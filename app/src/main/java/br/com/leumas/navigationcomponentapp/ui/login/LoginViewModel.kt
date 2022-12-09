@@ -7,14 +7,20 @@ import br.com.leumas.navigationcomponentapp.R
 class LoginViewModel : ViewModel() {
 
     sealed class AuthenticationState {
+        object Unauthenticated: AuthenticationState()
+        object Authenticated: AuthenticationState()
         class InvalidAuthentication(val fields: List<Pair<String, Int>>) : AuthenticationState()
     }
 
     val authenticationStateEvent = MutableLiveData<AuthenticationState>()
 
+    init {
+        authenticationStateEvent.value = AuthenticationState.Unauthenticated
+    }
+
     fun authentication(userName: String, password: String) {
         if (isValidForm(userName, password)) {
-            //Usuario está autenticado
+            authenticationStateEvent.value = AuthenticationState.Authenticated
         } else {
 
         }
