@@ -1,6 +1,7 @@
 package br.com.leumas.navigationcomponentapp.extensions
 
 import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import br.com.leumas.navigationcomponentapp.R
 
@@ -13,4 +14,8 @@ private val navOptions = NavOptions.Builder()
 
 fun NavController.navigateWithAnimations(destinationIdRes: Int) {
     this.navigate(destinationIdRes, null, navOptions)
+}
+
+fun NavController.navigateWithAnimations(directions: NavDirections) {
+    this.navigate(directions, navOptions)
 }

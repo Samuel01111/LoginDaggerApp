@@ -33,12 +33,12 @@
 
     <navigation
         android:id="@+id/registrationNavigation"
-        app:startDestination="@id/profileFragment">
+        app:startDestination="@id/profileDataFragment">
 
         <fragment
             android:id="@+id/profileDataFragment"
             android:name="br.com.leumas.navigationcomponentapp.ui.registration.profiledata.ProfileDataFragment"
-            android:label="ProfileDataFragment" >
+            android:label="Profile Data" >
             <action
                 android:id="@+id/action_profileDataFragment_to_chooseCredentialsFragment"
                 app:destination="@id/chooseCredentialsFragment" />
@@ -47,7 +47,7 @@
         <fragment
             android:id="@+id/chooseCredentialsFragment"
             android:name="br.com.leumas.navigationcomponentapp.ui.registration.choosecredentials.ChooseCredentialsFragment"
-            android:label="fragment_choose_credentials"
+            android:label="Choose Credentials"
             tools:layout="@layout/fragment_choose_credentials" >
 
             <argument

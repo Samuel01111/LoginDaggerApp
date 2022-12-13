@@ -60,6 +60,10 @@ class LoginFragment : Fragment() {
             viewModel.authentication(userName, password)
         }
 
+        buttonLoginSignUp.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registrationNavigation)
+        }
+
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             cancelAuthentication()
         }

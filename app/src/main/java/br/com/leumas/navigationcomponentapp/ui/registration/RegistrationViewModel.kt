@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.leumas.navigationcomponentapp.R
-import br.com.leumas.navigationcomponentapp.ui.login.LoginViewModel
 
 class RegistrationViewModel : ViewModel() {
 
@@ -34,11 +33,11 @@ class RegistrationViewModel : ViewModel() {
         val invalidFields = arrayListOf<Pair<String, Int>>()
 
         if (name.isEmpty()) {
-            invalidFields.add(LoginViewModel.INPUT_USERNAME)
+            invalidFields.add(INPUT_NAME)
         }
 
         if (bio.isEmpty()) {
-            invalidFields.add(LoginViewModel.INPUT_PASSWORD)
+            invalidFields.add(INPUT_BIO)
         }
 
         if (invalidFields.isNotEmpty()){
@@ -48,7 +47,7 @@ class RegistrationViewModel : ViewModel() {
         return true
     }
 
-    private fun createCredentials(username: String, password: String) {
+    fun createCredentials(username: String, password: String) {
         if (isValidCredentials(username, password)) {
             // ... create account
             // .. authenticate
@@ -59,11 +58,11 @@ class RegistrationViewModel : ViewModel() {
 
     private fun isValidCredentials(username: String, password: String): Boolean {
         val invalidFields = arrayListOf<Pair<String, Int>>()
-        if (username.isEmpty()) invalidFields.add(LoginViewModel.INPUT_USERNAME)
+        if (username.isEmpty()) invalidFields.add(INPUT_USERNAME)
 
 
         if (password.isEmpty()) {
-            invalidFields.add(LoginViewModel.INPUT_PASSWORD)
+            invalidFields.add(INPUT_PASSWORD)
         }
 
         if (invalidFields.isNotEmpty()){
