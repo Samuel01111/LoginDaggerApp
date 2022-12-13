@@ -6,10 +6,12 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import br.com.leumas.navigationcomponentapp.R
+import br.com.leumas.navigationcomponentapp.extensions.dismissError
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_login.*
 
@@ -41,6 +43,14 @@ class LoginFragment : Fragment() {
                     findNavController().popBackStack()
                 }
             }
+        }
+
+        inputLoginUsername.addTextChangedListener {
+            inputLayoutLoginUsername.dismissError()
+        }
+
+        inputLoginPassword.addTextChangedListener {
+            inputLayoutLoginPassword.dismissError()
         }
 
         buttonLoginSignIn.setOnClickListener {
