@@ -1,4 +1,4 @@
-package br.com.leumas.navigationcomponentapp.ui.login
+package br.com.leumas.daggerApp.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,16 +8,17 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import br.com.leumas.navigationcomponentapp.R
-import br.com.leumas.navigationcomponentapp.extensions.dismissError
+import br.com.leumas.daggerApp.R
+import br.com.leumas.daggerApp.data.DefaultRepository
+import br.com.leumas.daggerApp.extensions.dismissError
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
 
-    private val viewModel: LoginViewModel by activityViewModels()
+    private lateinit var viewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +30,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true) //warning to the fragment that it has options to be clicked and "onOptionsItemSelected()" will works
+
+        viewModel = ViewModelProvider(
+            this,
+            LoginViewModel.LoginViewModelFactory(DefaultRepository())
+        )[LoginViewModel::class.java]
 
         viewModel.authenticationStateEvent.observe(viewLifecycleOwner) {
             when (it) {

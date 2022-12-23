@@ -1,9 +1,9 @@
-package br.com.leumas.navigationcomponentapp.ui.registration
+package br.com.leumas.daggerApp.ui.registration
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import br.com.leumas.navigationcomponentapp.R
+import br.com.leumas.daggerApp.R
 
 class RegistrationViewModel : ViewModel() {
 

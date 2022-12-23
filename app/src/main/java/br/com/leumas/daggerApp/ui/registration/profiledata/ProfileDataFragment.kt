@@ -1,4 +1,4 @@
-package br.com.leumas.navigationcomponentapp.ui.registration.profiledata
+package br.com.leumas.daggerApp.ui.registration.profiledata
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,10 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import br.com.leumas.navigationcomponentapp.R
-import br.com.leumas.navigationcomponentapp.extensions.dismissError
-import br.com.leumas.navigationcomponentapp.extensions.navigateWithAnimations
-import br.com.leumas.navigationcomponentapp.ui.registration.RegistrationViewModel
+import br.com.leumas.daggerApp.R
+import br.com.leumas.daggerApp.extensions.dismissError
+import br.com.leumas.daggerApp.extensions.navigateWithAnimations
+import br.com.leumas.daggerApp.ui.registration.RegistrationViewModel
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_profile_data.*
 

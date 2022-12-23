@@ -1,4 +1,4 @@
-package br.com.leumas.navigationcomponentapp
+package br.com.leumas.daggerApp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -1,9 +1,9 @@
-package br.com.leumas.navigationcomponentapp.extensions
+package br.com.leumas.daggerApp.extensions
 
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
-import br.com.leumas.navigationcomponentapp.R
+import br.com.leumas.daggerApp.R
 
 private val navOptions = NavOptions.Builder()
     .setEnterAnim(R.anim.slide_in_right)

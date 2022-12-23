@@ -1,4 +1,4 @@
-package br.com.leumas.navigationcomponentapp.ui.profile
+package br.com.leumas.daggerApp.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import br.com.leumas.navigationcomponentapp.R
-import br.com.leumas.navigationcomponentapp.ui.login.LoginViewModel
+import br.com.leumas.daggerApp.R
+import br.com.leumas.daggerApp.ui.login.LoginViewModel
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment() {

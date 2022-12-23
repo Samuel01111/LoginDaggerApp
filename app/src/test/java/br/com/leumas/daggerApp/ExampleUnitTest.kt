@@ -1,4 +1,4 @@
-package br.com.leumas.navigationcomponentapp
+package br.com.leumas.daggerApp
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

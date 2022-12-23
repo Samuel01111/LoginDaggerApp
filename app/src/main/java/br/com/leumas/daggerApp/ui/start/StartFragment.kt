@@ -1,4 +1,4 @@
-package br.com.leumas.navigationcomponentapp.ui.start
+package br.com.leumas.daggerApp.ui.start
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import br.com.leumas.navigationcomponentapp.R
-import br.com.leumas.navigationcomponentapp.extensions.navigateWithAnimations
+import br.com.leumas.daggerApp.R
+import br.com.leumas.daggerApp.extensions.navigateWithAnimations
 import kotlinx.android.synthetic.main.fragment_start.*
 
 class StartFragment : Fragment() {

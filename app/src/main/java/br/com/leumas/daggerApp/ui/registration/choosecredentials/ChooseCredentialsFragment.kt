@@ -1,4 +1,4 @@
-package br.com.leumas.navigationcomponentapp.ui.registration.choosecredentials
+package br.com.leumas.daggerApp.ui.registration.choosecredentials
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,10 +12,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import br.com.leumas.navigationcomponentapp.R
-import br.com.leumas.navigationcomponentapp.extensions.dismissError
-import br.com.leumas.navigationcomponentapp.ui.login.LoginViewModel
-import br.com.leumas.navigationcomponentapp.ui.registration.RegistrationViewModel
+import br.com.leumas.daggerApp.R
+import br.com.leumas.daggerApp.extensions.dismissError
+import br.com.leumas.daggerApp.ui.login.LoginViewModel
+import br.com.leumas.daggerApp.ui.registration.RegistrationViewModel
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_choose_credentials.*
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="br.com.leumas.navigationcomponentapp.ui.start.StartFragment"
+        android:name="br.com.leumas.daggerApp.ui.start.StartFragment"
         android:label="@string/start_action_bar_title"
         tools:layout="@layout/fragment_start" >
         <action
@@ -17,13 +17,13 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="br.com.leumas.navigationcomponentapp.ui.profile.ProfileFragment"
+        android:name="br.com.leumas.daggerApp.ui.profile.ProfileFragment"
         android:label="@string/profile_action_bar_title"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="br.com.leumas.navigationcomponentapp.ui.login.LoginFragment"
+        android:name="br.com.leumas.daggerApp.ui.login.LoginFragment"
         android:label="@string/login_action_bar_title"
         tools:layout="@layout/fragment_login" >
         <action
@@ -37,7 +37,7 @@
 
         <fragment
             android:id="@+id/profileDataFragment"
-            android:name="br.com.leumas.navigationcomponentapp.ui.registration.profiledata.ProfileDataFragment"
+            android:name="br.com.leumas.daggerApp.ui.registration.profiledata.ProfileDataFragment"
             android:label="Profile Data" >
             <action
                 android:id="@+id/action_profileDataFragment_to_chooseCredentialsFragment"
@@ -46,7 +46,7 @@
 
         <fragment
             android:id="@+id/chooseCredentialsFragment"
-            android:name="br.com.leumas.navigationcomponentapp.ui.registration.choosecredentials.ChooseCredentialsFragment"
+            android:name="br.com.leumas.daggerApp.ui.registration.choosecredentials.ChooseCredentialsFragment"
             android:label="Choose Credentials"
             tools:layout="@layout/fragment_choose_credentials" >
 

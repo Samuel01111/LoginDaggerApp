@@ -1,11 +1,15 @@
-package br.com.leumas.navigationcomponentapp.ui.login
+package br.com.leumas.daggerApp.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import br.com.leumas.navigationcomponentapp.R
+import androidx.lifecycle.ViewModelProvider
+import br.com.leumas.daggerApp.R
+import br.com.leumas.daggerApp.data.Repository
 
-class LoginViewModel : ViewModel() {
+class LoginViewModel(
+    private val repository: Repository
+) : ViewModel() {
 
     sealed class AuthenticationState {
         object Unauthenticated : AuthenticationState()
@@ -57,6 +61,12 @@ class LoginViewModel : ViewModel() {
             return false
         }
         return true
+    }
+
+    class LoginViewModelFactory(val repository: Repository): ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            return LoginViewModel(repository) as T
+        }
     }
 
     companion object {
