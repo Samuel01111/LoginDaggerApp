@@ -11,10 +11,7 @@ class NavigationApp: Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        //instanciate the graph dependencies to deploy all the modules dependencies to ViewModel and Fragments
         appComponent = DaggerApplicationComponent.factory().create(this)
-
-        appComponent.mainComponent()
     }
-
 }

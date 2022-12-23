@@ -3,11 +3,12 @@ package br.com.leumas.daggerApp.ui.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import br.com.leumas.daggerApp.R
 import br.com.leumas.daggerApp.data.Repository
+import javax.inject.Inject
 
-class LoginViewModel(
+
+class LoginViewModel @Inject constructor(
     private val repository: Repository
 ) : ViewModel() {
 
@@ -40,7 +41,7 @@ class LoginViewModel(
 
     fun authentication(username: String, password: String) {
         if (isValidForm(username, password)) {
-            this.username = username
+            repository.doLogin()
             _authenticationStateEvent.value = AuthenticationState.Authenticated
         }
     }
@@ -61,12 +62,6 @@ class LoginViewModel(
             return false
         }
         return true
-    }
-
-    class LoginViewModelFactory(val repository: Repository): ViewModelProvider.Factory {
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return LoginViewModel(repository) as T
-        }
     }
 
     companion object {

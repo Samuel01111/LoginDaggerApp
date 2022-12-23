@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import br.com.leumas.daggerApp.ui.di.MainComponent
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    lateinit var mainComponent: MainComponent
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        //all fragments inside of MainComponent
+        mainComponent = (applicationContext as NavigationApp)
+            .appComponent
+            .mainComponent()
+            .create()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

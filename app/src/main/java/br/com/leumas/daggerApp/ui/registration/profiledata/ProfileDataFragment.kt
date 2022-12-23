@@ -1,5 +1,6 @@
 package br.com.leumas.daggerApp.ui.registration.profiledata
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -8,19 +9,25 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import br.com.leumas.daggerApp.MainActivity
 import br.com.leumas.daggerApp.R
 import br.com.leumas.daggerApp.extensions.dismissError
 import br.com.leumas.daggerApp.extensions.navigateWithAnimations
 import br.com.leumas.daggerApp.ui.registration.RegistrationViewModel
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_profile_data.*
+import javax.inject.Inject
 
 class ProfileDataFragment : Fragment() {
 
-    private val registrationViewModel: RegistrationViewModel by activityViewModels()
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val registrationViewModel by viewModels<RegistrationViewModel> { viewModelFactory }
 
     private val navController: NavController by lazy {
         findNavController()
@@ -31,6 +38,11 @@ class ProfileDataFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_profile_data, container, false)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
